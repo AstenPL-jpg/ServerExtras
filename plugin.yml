@@ -1,0 +1,14 @@
+name: ServerExtras
+version: 1.0.0
+main: pl.serwer.ServerExtras
+api-version: '26.3'
+description: Limity enchantów (prot 3, sharp 3) i backupy ekwipunku z menu.
+commands:
+  backup:
+    description: Menu backupów ekwipunku graczy
+    usage: /backup [gracz]
+    permission: serverextras.backup
+permissions:
+  serverextras.backup:
+    description: Dostęp do /backup i przywracania ekwipunków
+    default: op

@@ -1,0 +1,10 @@
+# Maksymalne poziomy enchantów. Nazwa to klucz z Minecrafta, małymi literami,
+# np. protection, sharpness, fire_protection, blast_protection, smite, power.
+# Enchant, którego tu nie ma, działa jak w zwykłym Minecrafcie.
+max-levels:
+  protection: 3
+  sharpness: 3
+
+backups:
+  # Ile ostatnich backupów trzymać na jednego gracza (starsze są kasowane)
+  max-per-player: 30
