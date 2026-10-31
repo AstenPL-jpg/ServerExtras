@@ -14,7 +14,7 @@ dash:
   # Siła dasha. 1.8 to mocne wybicie, 3.0 to już bardzo daleko.
   strength: 1.8
   # Przerwa między dashami w sekundach. 0 = bez przerwy.
-  cooldown-seconds: 0
+  cooldown-seconds: 15
 
 enchanted-anvil:
   # Nakładka z połyskiem jest o włos większa od kowadła, żeby nie migotała. Zwykle nie ruszać.
