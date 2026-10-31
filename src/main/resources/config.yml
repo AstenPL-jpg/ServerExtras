@@ -1,6 +1,7 @@
 # Maksymalne poziomy enchantów. Nazwa to klucz z Minecrafta, małymi literami,
 # np. protection, sharpness, fire_protection, blast_protection, smite, power.
 # Enchant, którego tu nie ma, działa jak w zwykłym Minecrafcie.
+# Zaklęte kowadło (/giveanvil) tych limitów nie przestrzega.
 max-levels:
   protection: 3
   sharpness: 3
@@ -8,3 +9,17 @@ max-levels:
 backups:
   # Ile ostatnich backupów trzymać na jednego gracza (starsze są kasowane)
   max-per-player: 30
+
+dash:
+  # Siła dasha. 1.8 to mocne wybicie, 3.0 to już bardzo daleko.
+  strength: 1.8
+  # Przerwa między dashami w sekundach. 0 = bez przerwy.
+  cooldown-seconds: 0
+
+enchanted-anvil:
+  # Nakładka z połyskiem jest o włos większa od kowadła, żeby nie migotała. Zwykle nie ruszać.
+  scale: 1.002
+  # Jeśli postawione zaklęte kowadło jest za ciemne, daj true i postaw je ponownie.
+  fullbright: false
+  # Jeśli nakładka z połyskiem jest obrócona o 90 stopni względem kowadła, daj true i postaw ponownie.
+  flip-rotation: false
