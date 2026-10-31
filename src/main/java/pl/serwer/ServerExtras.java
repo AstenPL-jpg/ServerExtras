@@ -1,14 +1,17 @@
 package pl.serwer;
 
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Dwie rzeczy w jednym pluginie:
+ * Pluginy serwera w jednym:
  * 1. limity poziomów enchantów (domyślnie protection 3, sharpness 3),
- * 2. backupy ekwipunku graczy z menu do przywracania (/backup).
+ * 2. backupy ekwipunku graczy z menu do przywracania (/backup),
+ * 3. enchant Dash (/enchantdash, /dashitem),
+ * 4. zaklęte kowadło bez limitu enchantów (/giveanvil).
  */
 public final class ServerExtras extends JavaPlugin {
 
@@ -20,13 +23,23 @@ public final class ServerExtras extends JavaPlugin {
 
         backups = new Backups(this);
         BackupMenu menu = new BackupMenu(this, backups);
+        SpecialAnvil anvil = new SpecialAnvil(this);
+        Dash dash = new Dash(this);
 
-        getServer().getPluginManager().registerEvents(new EnchantCaps(this), this);
+        getServer().getPluginManager().registerEvents(new EnchantCaps(this, anvil), this);
         getServer().getPluginManager().registerEvents(new BackupListener(this, backups), this);
         getServer().getPluginManager().registerEvents(menu, this);
+        getServer().getPluginManager().registerEvents(anvil, this);
 
-        PluginCommand cmd = getCommand("backup");
-        if (cmd != null) cmd.setExecutor(menu);
+        bind("backup", menu);
+        bind("enchantdash", dash);
+        bind("dashitem", dash);
+        bind("giveanvil", anvil);
+    }
+
+    private void bind(String name, CommandExecutor executor) {
+        PluginCommand cmd = getCommand(name);
+        if (cmd != null) cmd.setExecutor(executor);
     }
 
     @Override

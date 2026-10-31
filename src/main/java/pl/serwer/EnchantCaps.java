@@ -1,5 +1,6 @@
 package pl.serwer;
 
+import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
 import org.bukkit.configuration.ConfigurationSection;
@@ -37,8 +38,10 @@ import java.util.Map;
 final class EnchantCaps implements Listener {
 
     private final Map<Enchantment, Integer> caps = new HashMap<>();
+    private final SpecialAnvil specialAnvil;
 
-    EnchantCaps(ServerExtras plugin) {
+    EnchantCaps(ServerExtras plugin, SpecialAnvil specialAnvil) {
+        this.specialAnvil = specialAnvil;
         ConfigurationSection sec = plugin.getConfig().getConfigurationSection("max-levels");
         StringBuilder log = new StringBuilder();
         if (sec != null) {
@@ -149,6 +152,10 @@ final class EnchantCaps implements Listener {
 
     @EventHandler
     public void onAnvil(PrepareAnvilEvent e) {
+        // zaklęte kowadło nie ma limitów
+        Location anvilLocation = e.getInventory().getLocation();
+        if (anvilLocation != null && specialAnvil.isSpecial(anvilLocation.getBlock())) return;
+
         ItemStack result = e.getResult();
         if (result != null && sanitize(result)) {
             e.setResult(result);
