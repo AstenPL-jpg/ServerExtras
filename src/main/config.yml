@@ -1,0 +1,54 @@
+# Maksymalne poziomy enchantów. Nazwa to klucz z Minecrafta, małymi literami,
+# np. protection, sharpness, fire_protection, blast_protection, smite, power.
+# Enchant, którego tu nie ma, działa jak w zwykłym Minecrafcie.
+# Zaklęte kowadło (/giveanvil) tych limitów nie przestrzega.
+max-levels:
+  protection: 3
+  sharpness: 3
+
+backups:
+  # Ile ostatnich backupów trzymać na jednego gracza (starsze są kasowane)
+  max-per-player: 30
+
+enchant:
+  # Nazwa enchantu widoczna w opisie broni. Zmiana dotyczy nowych przedmiotów,
+  # na starych odśwież ją komendą /dashitem add z bronią w ręce.
+  name: "Chain Rush"
+  # Ile poziomów doświadczenia kosztuje nałożenie enchantu w zaklętym kowadle (broń + księga).
+  anvil-cost: 10
+
+dash:
+  # Siła dasha. 2.2 to mocne wybicie, 3.5 to już bardzo daleko.
+  strength: 2.2
+  # Cooldown w sekundach. 0 = bez cooldownu.
+  cooldown-seconds: 15
+
+chain:
+  # Cooldown w sekundach. 0 = bez cooldownu.
+  cooldown-seconds: 20
+  # Jak daleko można zahaczyć łańcuch (w blokach).
+  range: 30
+  # Ty musisz być tyle bloków nad ziemią, żeby użyć łańcucha. Pozycja celu nie ma znaczenia.
+  min-height: 5
+  # Ułatwienie celowania: im więcej, tym łatwiej trafić w gracza w powietrzu.
+  aim-assist: 1.2
+  # Prędkość przyciągania (bloków na tick).
+  pull-speed: 1.5
+  # Ile ticków (20 = sekunda) maksymalnie trwa przyciąganie.
+  max-ticks: 60
+  # Przyciąganie kończy się, gdy jesteś tyle bloków od celu.
+  stop-distance: 2
+
+hud:
+  # Ikony na action barze obok napisu Ready. Możesz wkleić dowolny znak,
+  # także własny symbol z paczki zasobów.
+  dash-icon: "Ψ"
+  chain-icon: "☁"
+
+enchanted-anvil:
+  # Nakładka z połyskiem jest o włos większa od kowadła, żeby nie migotała. Zwykle nie ruszać.
+  scale: 1.002
+  # Jeśli postawione zaklęte kowadło jest za ciemne, daj true i postaw je ponownie.
+  fullbright: false
+  # Jeśli nakładka z połyskiem jest obrócona o 90 stopni względem kowadła, daj true i postaw ponownie.
+  flip-rotation: false

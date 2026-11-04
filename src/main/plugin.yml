@@ -1,0 +1,35 @@
+name: ServerExtras
+version: 1.3.0
+main: pl.serwer.ServerExtras
+api-version: '26.3'
+description: Limity enchantów, backupy ekwipunku, enchant Chain Rush (dash + chain) i zaklęte kowadło.
+commands:
+  backup:
+    description: Menu backupów ekwipunku graczy
+    usage: /backup [gracz]
+    permission: serverextras.backup
+  enchantdash:
+    description: Umiejętność Dash (broń z enchantem musi być w prawej ręce)
+    usage: /enchantdash
+  enchantchain:
+    description: Umiejętność Chain, przyciąga Cię do gracza, na którego patrzysz (musisz być min. 5 bloków nad ziemią)
+    usage: /enchantchain
+  dashitem:
+    description: Nakłada lub zdejmuje enchant z broni w ręce
+    usage: /dashitem <add|remove>
+    permission: serverextras.admin
+  givechainrush:
+    description: Daje księgę Chain Rush (użyj jej w zaklętym kowadle z bronią)
+    usage: /givechainrush [gracz]
+    permission: serverextras.admin
+  giveanvil:
+    description: Daje zaklęte kowadło
+    usage: /giveanvil [gracz]
+    permission: serverextras.admin
+permissions:
+  serverextras.backup:
+    description: Dostęp do /backup i przywracania ekwipunków
+    default: op
+  serverextras.admin:
+    description: Dostęp do /dashitem, /givechainrush i /giveanvil
+    default: op
