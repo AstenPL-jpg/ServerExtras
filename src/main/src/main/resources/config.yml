@@ -31,11 +31,11 @@ chain:
   # Ty musisz być tyle bloków nad ziemią, żeby użyć łańcucha. Pozycja celu nie ma znaczenia.
   min-height: 5
   # Ułatwienie celowania: im więcej, tym łatwiej trafić w gracza w powietrzu.
-  aim-assist: 1.2
+  aim-assist: 1.4
   # Prędkość przyciągania (bloków na tick).
-  pull-speed: 1.5
+  pull-speed: 1.7
   # Ile ticków (20 = sekunda) maksymalnie trwa przyciąganie.
-  max-ticks: 60
+  max-ticks: 80
   # Przyciąganie kończy się, gdy jesteś tyle bloków od celu.
   stop-distance: 2
 
